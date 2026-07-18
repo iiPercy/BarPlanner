@@ -1,0 +1,27 @@
+# Cartelle di compilazione Maven
+target/
+*.class
+*.jar
+*.war
+
+# File specifici di NetBeans
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+
+# IDE alternativi (Eclipse, IntelliJ, VSCode)
+.idea/
+*.iml
+.vscode/
+.project
+.classpath
+
+# File di sistema operativo
+.DS_Store
+Thumbs.db
+
+# File di log
+*.log

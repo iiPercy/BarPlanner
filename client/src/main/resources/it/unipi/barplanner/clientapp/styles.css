@@ -1,0 +1,27 @@
+.root {
+    -fx-font-family: "Segoe UI";
+}
+
+/* TEMA GIORNO */
+.tema-giorno {
+    -fx-background-color: #FFF8E1; /* Crema/Giallo chiaro */
+}
+.tema-giorno .label-titolo {
+    -fx-text-fill: #D35400; /* Arancione scuro */
+}
+.tema-giorno .button-action {
+    -fx-background-color: #F1C40F;
+    -fx-text-fill: black;
+}
+
+/* TEMA SERA */
+.tema-sera {
+    -fx-background-color: #2C3E50; /* Blu scuro notte */
+}
+.tema-sera .label-titolo {
+    -fx-text-fill: #ECF0F1; /* Bianco ghiaccio */
+}
+.tema-sera .button-action {
+    -fx-background-color: #8E44AD; /* Viola neon */
+    -fx-text-fill: white;
+}

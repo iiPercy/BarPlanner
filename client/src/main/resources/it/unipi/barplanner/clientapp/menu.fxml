@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="600.0" prefWidth="900.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unipi.barplanner.clientapp.MenuController">
+   
+    <top>
+        <VBox fx:id="rootNode" spacing="10.0" BorderPane.alignment="CENTER">
+            <padding>
+                <Insets bottom="10.0" left="20.0" right="20.0" top="20.0" />
+            </padding>
+            <children>
+                <HBox alignment="CENTER_LEFT" spacing="20.0">
+                    <children>
+                        <Button fx:id="btnIndietro" mnemonicParsing="false" onAction="#onIndietroClick" text="← Back" />
+                        <Label fx:id="lblTitolo" styleClass="label-titolo" text="Menu Title">
+                            <font>
+                                <Font name="System Bold" size="24.0" />
+                            </font>
+                        </Label>
+                        <Region HBox.hgrow="ALWAYS" /> 
+                        <Label fx:id="lblTurnoInfo" text="Shift: ..." textFill="#7f8c8d" />
+                    </children>
+                </HBox>
+
+                <Separator prefWidth="200.0" />
+
+                <ToolBar style="-fx-background-color: transparent;">
+                    <items>
+                        <Label text="Search:" />
+                        <TextField fx:id="txtRicerca" promptText="Ex. 'Gin', 'Butter'..." />
+                  
+                        <Separator orientation="VERTICAL" />
+                  
+                        <Button fx:id="btnAggiungi" mnemonicParsing="false" onAction="#onAggiungiClick" text="+ Add new Item" />
+                  
+                        <Region HBox.hgrow="ALWAYS" /> 
+                        <Button fx:id="btnSalva" mnemonicParsing="false" onAction="#onSalvaClick" style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-weight: bold;" text="💾 SAVE CHANGES" />
+                        <Button fx:id="btnPdf" mnemonicParsing="false" onAction="#onPdfClick" style="-fx-background-color: #e67e22; -fx-text-fill: white; -fx-font-weight: bold;" text="📄 PRINT PDF" />
+                    </items>
+                </ToolBar>
+            </children>
+        </VBox>
+    </top>
+
+    <center>
+        <TableView fx:id="tabellaMenu" editable="true" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <columns>
+                <TableColumn fx:id="colNome" prefWidth="200.0" text="Item Name" />
+          
+                <TableColumn fx:id="colIngredienti" prefWidth="321.0" text="Ingredients " />
+            
+                <TableColumn fx:id="colCategoria" prefWidth="164.0" text="Category" />
+            
+                <TableColumn fx:id="colPrezzo" minWidth="0.0" prefWidth="174.0" style="-fx-alignment: CENTER-RIGHT; -fx-font-weight: bold;" text="Price (€)" />
+            </columns>
+         
+            <contextMenu>
+                
+            </contextMenu>
+            <BorderPane.margin>
+                <Insets left="20.0" right="20.0" />
+            </BorderPane.margin>
+        </TableView>
+    </center>
+
+    <bottom>
+        <HBox alignment="CENTER_RIGHT" spacing="10.0" BorderPane.alignment="CENTER">
+            <padding>
+                <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+            </padding>
+        </HBox>
+    </bottom>
+
+</BorderPane>
