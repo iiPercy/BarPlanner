@@ -35,10 +35,10 @@ Il sistema supporta la gestione multi-turno (es. *Caffetteria/Brunch* di giorno,
 ---
 
 ## 📸 Screenshots
-*(Aggiungi qui 3-4 screenshot della tua applicazione! Inseriscili trascinando le immagini direttamente su GitHub)*
-* `![Schermata iniziale](link_immagine_1)`
-* `![Gestione Menu Tema Giorno](link_immagine_2)`
-* `![Esempio di PDF Generato](link_immagine_3)`
+
+* `![Schermata iniziale](<img width="894" height="589" alt="image" src="https://github.com/user-attachments/assets/92208a80-3ae2-43bc-9b7f-31abf52ff292" />)`
+* `![Gestione Menu Tema Giorno](<img width="894" height="591" alt="image" src="https://github.com/user-attachments/assets/a7d186ba-4383-468c-a706-db1df265dc61" />)`
+* `![Esempio di PDF Generato](<img width="893" height="1226" alt="image" src="https://github.com/user-attachments/assets/f8f999ed-e40d-4348-b383-3d48d814d943" />)`
 
 ---
 
