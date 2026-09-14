@@ -1,8 +1,9 @@
 # 🍸☕ BarPlanner (Client-Server Menu Management System)
+(Progetto per l'esame di Programmazione Avanzata per l'università di Pisa - Valutazione in trentesimi: 30)
 
 BarPlanner è un'applicazione Client-Server sviluppata in **Java** che permette ai proprietari di bar e locali di gestire in modo semplice, veloce e accattivante i propri menù digitali, con la possibilità di esportare automaticamente listini impaginati in **PDF**.
 
-Il sistema supporta la gestione multi-turno (es. *Caffetteria/Brunch* di giorno, *Cocktail Bar* di sera), adattando dinamicamente sia l'interfaccia utente che lo stile dei documenti generati.
+Il sistema supporta la gestione multi-turno (*Caffetteria/Brunch* di giorno, *Cocktail Bar* di sera), adattando dinamicamente sia l'interfaccia utente che lo stile dei documenti generati.
 
 ## ✨ Features Principali
 
@@ -27,7 +28,7 @@ Il sistema supporta la gestione multi-turno (es. *Caffetteria/Brunch* di giorno,
 * **OpenPDF (com.lowagie.text)** per l'impaginazione e stampa dei documenti PDF.
 
 ### Architettura e Scelte Tecniche (Developer Notes)
-* Il progetto integra strumenti moderni ma mantiene volontariamente un approccio nativo su alcune specifiche funzionalità per dimostrare la padronanza dei fondamenti Java. 
+* Il progetto integra strumenti moderni ma mantiene volontariamente un approccio nativo su alcune specifiche funzionalità per dimostrare la padronanza dei fondamenti Java, come richiesto dalle specifiche fornite.
 * Le chiamate HTTP verso le API esterne (nel Server) e verso il Backend (nel Client) sono implementate nativamente tramite `HttpURLConnection`, evitando astrazioni ad alto livello (come `WebClient` o `RestTemplate`). 
 * Il parsing dei dati da e verso JSON è gestito tramite la libreria `Gson` di Google per mappare agilmente strutture complesse sui DTO dell'applicazione.
 * Durante lo sviluppo, sono stati impiegati strumenti di **Generative AI (Gemini Pro)** per velocizzare la scrittura del codice ripetitivo (come il parsing JSON -> DTO e la prototipazione dei file `.fxml`), ottimizzando il workflow e le tempistiche di rilascio.
@@ -65,5 +66,5 @@ Il progetto è diviso in due moduli principali: `server` e `client`.
 ### 2. Avvio del Client
 1. Una volta che il server è *UP*, apri il modulo Client.
 2. Avvia la classe `App.java` per far partire l'interfaccia JavaFX.
-3. Se è il primissimo avvio o il database è vuoto, clicca sul bottone rosso **"Inizializza Applicazione"** nella UI per avviare il fetch massivo dei dati dalle API esterne.
+3. Al primo avvio il database viene automaticamente generato e popolato, ma in caso di file corrotti o se si volesse scaricare nuovamente ogni dato dalle API esterne, è presente il bottone rosso **"Inizializza Applicazione"** nella UI che avvia manualmente il fetch massivo dei dati dalle API esterne.
 4. Seleziona il tuo turno e inizia a personalizzare il tuo menù!
