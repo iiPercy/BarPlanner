@@ -42,20 +42,14 @@ The system supports multi-shift management (*Cafe/Brunch* during the day, *Cockt
 ## 📸 Screenshots
 
 * **Initial Screen**
-
 <br>
   <img width="894" height="589" alt="Schermata iniziale" src="https://github.com/user-attachments/assets/92208a80-3ae2-43bc-9b7f-31abf52ff292" />
-
 * **Menu Management Day Theme**
-
 <br>
   <img width="894" height="591" alt="Gestione Menu Tema Giorno" src="https://github.com/user-attachments/assets/a7d186ba-4383-468c-a706-db1df265dc61" />
-
 * **Generated PDF Example**
-
 <br>
   <img width="893" height="1226" alt="Esempio di PDF Generato" src="https://github.com/user-attachments/assets/f8f999ed-e40d-4348-b383-3d48d814d943" />
-
 ---
 
 ## 🚀 How to run the project
