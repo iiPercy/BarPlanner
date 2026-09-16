@@ -1,70 +1,78 @@
 # 🍸☕ BarPlanner (Client-Server Menu Management System)
-(Progetto per l'esame di Programmazione Avanzata per l'università di Pisa - Valutazione in trentesimi: 30)
 
-BarPlanner è un'applicazione Client-Server sviluppata in **Java** che permette ai proprietari di bar e locali di gestire in modo semplice, veloce e accattivante i propri menù digitali, con la possibilità di esportare automaticamente listini impaginati in **PDF**.
+(Project for the "Advanced Coding" exam at the University of Pisa - Score: 30/30)
 
-Il sistema supporta la gestione multi-turno (*Caffetteria/Brunch* di giorno, *Cocktail Bar* di sera), adattando dinamicamente sia l'interfaccia utente che lo stile dei documenti generati.
+BarPlanner is a Client-Server application developed in **Java** that allows bar and club owners to easily, quickly, and attractively manage their digital menus, with the ability to automatically export paginated price lists as **PDFs**.
 
-## ✨ Features Principali
+The system supports multi-shift management (*Cafe/Brunch* during the day, *Cocktail Bar* at night), dynamically adapting both the user interface and the style of the generated documents.
 
-- **Architettura Client-Server:** Comunicazione fluida tra un'interfaccia desktop (JavaFX) e un backend RESTful (Spring Boot).
-- **Popolamento Automatico DB:** In fase di inizializzazione, il server scarica in automatico dati reali di cibi e drink interrogando le API pubbliche di *TheCocktailDB* e *Spoonacular*.
-- **Gestione Multi-Turno:** L'interfaccia utente cambia tema (Giorno ☀️ / Sera 🌙) in base al turno selezionato.
-- **Generazione PDF:** Esportazione del menù in PDF con formattazione e palette di colori dinamica in base al turno di riferimento (tramite libreria OpenPDF/iText).
-- **UI Asincrona:** L'interfaccia grafica rimane sempre reattiva grazie all'uso di `Task` e Thread separati per tutte le chiamate di rete HTTP verso il server.
-- **CRUD e Filtri in tempo reale:** Ricerca istantanea nel menù per nome, categoria o ingrediente.
+## ✨ Main Features
 
-## 🛠️ Tecnologie Utilizzate
+* **Client-Server Architecture:** Fluid communication between a desktop interface (JavaFX) and a RESTful backend (Spring Boot).
+* **Automatic DB Population:** During initialization, the server automatically downloads real food and drink data by querying the public APIs of *TheCocktailDB* and *Spoonacular*.
+* **Multi-Shift Management:** The user interface changes theme (Day ☀️ / Night 🌙) based on the selected shift.
+* **PDF Generation:** Exporting the menu to PDF with formatting and dynamic color palettes based on the reference shift (via OpenPDF/iText library).
+* **Asynchronous UI:** The graphical interface always remains responsive thanks to the use of `Task` and separate Threads for all HTTP network calls to the server.
+* **CRUD and Real-time Filters:** Instant search in the menu by name, category, or ingredient.
+
+## 🛠️ Technologies Used
 
 ### Backend (Server)
+
 * **Java 17+**
-* **Spring Boot / Spring Data JPA** per la gestione del server e persistenza.
-* **MySQL** come database relazionale (configurato tramite *application.properties*).
-* **Lombok** per la riduzione del codice boilerplate (DTO ed Entity).
+* **Spring Boot / Spring Data JPA** for server management and persistence.
+* **MySQL** as the relational database (configured via *application.properties*).
+* **Lombok** to reduce boilerplate code (DTOs and Entities).
 
 ### Frontend (Client)
-* **JavaFX** per l'interfaccia grafica desktop.
-* **CSS** per lo styling dinamico dei temi giorno/sera.
-* **OpenPDF (com.lowagie.text)** per l'impaginazione e stampa dei documenti PDF.
 
-### Architettura e Scelte Tecniche (Developer Notes)
-* Il progetto integra strumenti moderni ma mantiene volontariamente un approccio nativo su alcune specifiche funzionalità per dimostrare la padronanza dei fondamenti Java, come richiesto dalle specifiche fornite.
-* Le chiamate HTTP verso le API esterne (nel Server) e verso il Backend (nel Client) sono implementate nativamente tramite `HttpURLConnection`, evitando astrazioni ad alto livello (come `WebClient` o `RestTemplate`). 
-* Il parsing dei dati da e verso JSON è gestito tramite la libreria `Gson` di Google per mappare agilmente strutture complesse sui DTO dell'applicazione.
-* Durante lo sviluppo, sono stati impiegati strumenti di **Generative AI (Gemini Pro)** per velocizzare la scrittura del codice ripetitivo (come il parsing JSON -> DTO e la prototipazione dei file `.fxml`), ottimizzando il workflow e le tempistiche di rilascio.
+* **JavaFX** for the desktop graphical interface.
+* **CSS** for the dynamic styling of day/night themes.
+* **OpenPDF (com.lowagie.text)** for pagination and printing of PDF documents.
+
+### Architecture and Technical Choices (Developer Notes)
+
+* The project integrates modern tools but deliberately maintains a native approach on some specific functionalities to demonstrate mastery of Java fundamentals, as required by the provided specifications.
+* HTTP calls to external APIs (in the Server) and to the Backend (in the Client) are natively implemented via `HttpURLConnection`, avoiding high-level abstractions (such as `WebClient` or `RestTemplate`).
+* Data parsing to and from JSON is handled via Google's `Gson` library to easily map complex structures onto the application's DTOs.
+* During development, **Generative AI (Gemini Pro)** tools were used to speed up the writing of repetitive code (such as JSON -> DTO parsing and prototyping `.fxml` files), optimizing the workflow and release timelines.
 
 ---
 
 ## 📸 Screenshots
 
-* **Schermata iniziale**
-  <br>
+* **Initial Screen**
+<br>
   <img width="894" height="589" alt="Schermata iniziale" src="https://github.com/user-attachments/assets/92208a80-3ae2-43bc-9b7f-31abf52ff292" />
 
-* **Gestione Menu Tema Giorno**
-  <br>
+* **Menu Management Day Theme**
+<br>
   <img width="894" height="591" alt="Gestione Menu Tema Giorno" src="https://github.com/user-attachments/assets/a7d186ba-4383-468c-a706-db1df265dc61" />
 
-* **Esempio di PDF Generato**
-  <br>
+* **Generated PDF Example**
+<br>
   <img width="893" height="1226" alt="Esempio di PDF Generato" src="https://github.com/user-attachments/assets/f8f999ed-e40d-4348-b383-3d48d814d943" />
 
 ---
 
-## 🚀 Come avviare il progetto
+## 🚀 How to run the project
 
-Il progetto è diviso in due moduli principali: `server` e `client`. 
+The project is divided into two main modules: `server` and `client`.
 
-### 1. Avvio del Server
-1. Assicurati di avere un'istanza **MySQL** in esecuzione sulla porta `3306`.
-2. Crea le variabili d'ambiente necessarie (o modificale nel file `application.properties`):
-   * `DB_PASSWORD` (La password del tuo database root)
-   * `spoonacular.api.key` (La tua API key di Spoonacular)
-3. Il server creerà automaticamente il database `barplanner` se non esiste.
-4. Avvia il server Spring Boot. Il servizio risponderà su `http://localhost:8080/BarPlanner`.
+### 1. Starting the Server
 
-### 2. Avvio del Client
-1. Una volta che il server è *UP*, apri il modulo Client.
-2. Avvia la classe `App.java` per far partire l'interfaccia JavaFX.
-3. Al primo avvio il database viene automaticamente generato e popolato, ma in caso di file corrotti o se si volesse scaricare nuovamente ogni dato dalle API esterne, è presente il bottone rosso **"Inizializza Applicazione"** nella UI che avvia manualmente il fetch massivo dei dati dalle API esterne.
-4. Seleziona il tuo turno e inizia a personalizzare il tuo menù!
+1. Make sure you have a **MySQL** instance running on port `3306`.
+2. Create the necessary environment variables (or modify them in the `application.properties` file):
+* `DB_PASSWORD` (The password for your root database)
+* `spoonacular.api.key` (Your Spoonacular API key)
+
+
+3. The server will automatically create the `barplanner` database if it does not exist.
+4. Start the Spring Boot server. The service will respond on `http://localhost:8080/BarPlanner`.
+
+### 2. Starting the Client
+
+1. Once the server is *UP*, open the Client module.
+2. Run the `App.java` class to start the JavaFX interface.
+3. Upon the first launch, the database is automatically generated and populated, but in case of corrupted files or if you want to download all the data from the external APIs again, there is a red **"Inizializza Applicazione"** (Initialize Application) button in the UI that manually starts the massive data fetch from the external APIs.
+4. Select your shift and start customizing your menu!
